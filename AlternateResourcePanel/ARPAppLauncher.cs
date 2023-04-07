@@ -202,7 +202,8 @@ namespace KSPAlternateResourcePanel
             }
             ApplicationLauncherButton ButtonToToggle = btnAppLauncher;
             if (settings.ButtonStyleToDisplay == ARPWindowSettings.ButtonStyleEnum.StockReplace)
-                ButtonToToggle = ResourceDisplay.Instance.appLauncherButton;
+                if(ResourceDisplay.Instance != null)
+                    ButtonToToggle = ResourceDisplay.Instance?.appLauncherButton;
 
             if (ButtonToToggle == null)
             {
